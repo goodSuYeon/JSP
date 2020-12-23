@@ -1,0 +1,23 @@
+< Maven Project >
+(일반적으로 기술하는 방법_정보)
+ - Group Id : 회사 도메인 역순으로 기술
+	(ex) naver.com --> com.naver
+	(ex) ddit.or.kr   --> kr.or.ddit
+
+ - Artifact Id : 회사에서 진행하는 프로젝트명
+	(ex) google : Gmail, Google Drive 같은거
+
+ - Version : 프로젝트의 버전
+	(ex) 대.중.소 -> 3.5.2
+ - Packaging : 
+       jar(Java ARchive : 클래스들을 묶어 놓은 압축파일) 
+	   war (Web ARchive : 웹 프로그램을 묶어 놓은 파일)
+       tomcat의 webapps폴더에 war파일을 복사해놓고 톰캣을 가동하면
+	      톰캣이 자동으로 war파일을 압축해제해 웹 애플리케이션이 서비스 되도록 함 
+	      
+pom : Project Object Model (프로젝트에 대한 설정 정보)
+      - 해당 프로젝트를 만든 회사
+      - 프로젝트 이름 
+      - 프로젝트의 버전
+      - 프로젝트에서 발표로하는 의존성 - 라이브러리(ojdbc6.jar)
+pom.xml	      
