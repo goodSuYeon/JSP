@@ -1,0 +1,7 @@
+System.out.println 앞으로 사용금지
+
+servlet : java에 html코드를 삽입
+ <문제점> 
+  1. html코드들이 문자로 취급되기 떄문에 오타를 발견하기가 어려움
+  
+jsp : html코드에 java코드를 삽입
