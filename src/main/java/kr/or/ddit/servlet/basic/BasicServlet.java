@@ -43,10 +43,9 @@ public class BasicServlet extends HttpServlet {
 		out.println("		<title>basic Servlet</title>");
 		out.println("	</head>");
 		out.println("<body>");
-		out.println("	<h2>나는 김뚜욘!</h2>");
+		out.println("	Hello, World" + new Date());
 		out.println("</body>");
 		out.println("</html>");
-		out.println("Hello, World" + new Date());
 		
 		out.flush();	//더이상 작성할 내용이 없으므로 작업을 마무리한다.
 		out.close();	//그리고, 사용할 자원 반납한다.
