@@ -7,14 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-
-		
-	webapp/index.jsp ==> localhost/index.jsp
-	
-	webapp/image/brown.png
-	
-	<img src="<%=request.getContextPath() %>/image/brown.png" />
-	
+	2번째) webapp/basic.jsp
 </body>
 </html>

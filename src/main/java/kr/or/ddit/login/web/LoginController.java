@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,5 +57,33 @@ public class LoginController extends HttpServlet {
 			logger.debug("{}", map.get(it.next()));   //it.next라고만 하면 key값만 얻어오게 됨.
 		}
 		
+		//ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+		//로그인 프로세스
+		/* DB에 저장된 사용자 정보와 일치하는지 검증해야하나, DB연동이 아직 준비되지 않은 관계로 
+		   userid가 brown일 때 비밀번호가 brownpass인 경우에 한해 로그인이 성공되었다고 판단한다. (그 외 경우는 로그인 실패로 간주)
+		   로그인 성공시 : main.jsp로 forward
+		   로그인 실패시 : login.jsp로 redirect
+		*/
+		//1. userid, pass 파라미터를 문자열 변수에 저장
+		//2. userid, pass 값이 지정한 값과 일치하는지 비교
+		//3. 2번 비교 사항이 true일 때, webapp/main.jsp로 forward함 
+		//4. 2번 비교 사항이 false일 때, webapp/login.jsp로 redirect함
+		
+		
+		//1번
+		String userid = req.getParameter("userid");
+		String pass = req.getParameter("pass");
+		
+		//2번
+		if(userid.equals("brown") && pass.equals("brownpass")) {
+			  // 3. 2번 비교 사항이 true일 때 webapp/main.jsp로 forward ( main.jsp는 생성 )
+	         req.getRequestDispatcher("/main.jsp").forward(req, resp);
+		}
+		else {
+			  // 4. 2번 비교 사항이 false일 때 webapp/login.jsp로 redirect
+	         resp.sendRedirect(req.getContextPath()+"/login.jsp");
+
+		}
+
 	}
 }

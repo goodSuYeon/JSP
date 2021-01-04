@@ -8,14 +8,23 @@
 </head>
 <body>
 <table border="1">
-	<% for(int j=1; j<=10; j++) { %>	   <!-- 표현식 : 문자열 출력 -->
+ 	<% for(int j=1; j<=10; j++) { %>	   <!-- 표현식 : 문자열 출력 -->
 		<tr>
 		<% for(int i=2; i<=9; i++) { %>
 		<td><%= i + " * " + j + " =" + i*j %></td>
-<%-- 또는 <td><%= i %> * <%=j %> = <%= i*j %> </td> --%>
+또는 <td><%= i %> * <%=j %> = <%= i*j %> </td>
 	  <% } %>
 	   </tr>
 	<% } %> 
+
+
+<%-- 	<% for(int j=1; j<=10; j++) { 	  
+		out.write("<tr>");
+			for(int i=2; i<=9; i++) { 
+		  out.write("<td>" + i + " * " + j + " =" + i*j + "</td>"); 
+			}
+		out.write("</tr>");
+	   } %> --%>
 
 </table>
 </body>
