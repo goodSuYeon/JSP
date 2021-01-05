@@ -33,7 +33,7 @@
 
       <form class="form-signin" action="<%=request.getContextPath() %>/LoginController" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <label for=""userid"" class="sr-only">userId</label>
+        <label for="userid" class="sr-only">userId</label>
         <input type="text" value="brown" id="userid" name="userid" class="form-control" placeholder="Id" required autofocus>
         
         <label for="pass" class="sr-only">Password</label>
