@@ -1,0 +1,43 @@
+<쿠키를 이용해 구현하고자 하는 기능>
+ 1. Remember me를 체크하고 로그인을 했을 경우 
+    -> userid, rememberme 라는 이름으로 쿠키를 저장해 다시 login.jsp에 접속했을 때 
+       사용자id가 마지막 접속 시 아이디로 값이 채워지고 "Remember me 체크박스"가 체크 되어지도록 설정
+       
+       (필요한것) $(function()){
+       				클릭이벤트 감지 -> sing in 버튼
+       				
+       				쿠키 설정
+       				submit;		
+    			});
+
+코드 작성 과정
+①
+- html 수정1
+<button class="btn btn-lg btn-primary btn-block" id="signin" type="button">Sign in</button>
+
+- html 수정2
+<label>
+      <input type="checkbox" id="rememberme" value="remember-me"> Remember me
+ </label>
+
+- html 수정2
+      <form id="frm" class="form-signin" action="<%=request.getContextPath() %>/LoginController" method="post">
+
+
+- script 추가
+<script> 
+  $(function(){
+       $("#signin").on("click", function(){
+
+	(1) rememberme 체크박스가 체크되어 있는지 확인		
+	(2) (1상황) 체크되어 있을 경우
+	(3) userid input에 있는 값을 userid쿠키로 저장
+	(4) remember쿠키로 Y값을 저장	
+	(5) (2상황)체크 해제 되어 있을 경우
+	(6) 더이상 사용하지 않는다는 의미로, userid와 rememberme 쿠키를 삭제
+	(7) form태그를 이용해 signin 요청
+
+      })
+})
+</script>
+    			
