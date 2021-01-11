@@ -30,8 +30,7 @@
 		if(userid != undefined) {
 				$("#userid").html(userid);
 			}
-		}
-		
+
 	//signin 아이디를 select
 	$("#signin").on("click", function(){
 		//rememberme 체크박스가 체크 되어있는지 확인

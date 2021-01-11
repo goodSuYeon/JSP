@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	common_lib.jsp 입니둥
+	
 </body>
 </html>
