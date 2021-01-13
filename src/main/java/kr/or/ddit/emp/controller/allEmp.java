@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import kr.or.ddit.emp.model.EmpVo;
 import kr.or.ddit.emp.service.EmpService;
-import kr.or.ddit.user.controller.AllUser.allUser;
+import kr.or.ddit.user.controller.allUser;
 import kr.or.ddit.user.model.UserVo;
 
 @WebServlet("/allEmp")

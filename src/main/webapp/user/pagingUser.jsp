@@ -27,6 +27,10 @@ $(function(){
 		$('#userid').val(userid);
 		$('#frm').submit();
 	})
+	
+	$('#insertBtn').on('click', function(){
+		 location.href="/user/registUser.jsp"
+	})
 })
 </script>
 </head>
@@ -82,7 +86,7 @@ $(function(){
 							</table>
 						</div>
 						
-						<a class="btn btn-default pull-right">사용자 등록</a>
+						<a id="insertBtn" class="btn btn-default pull-right">사용자 등록</a>
 
 						<div class="text-center">
 						
