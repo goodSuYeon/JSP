@@ -10,11 +10,26 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>user.Jsp</title>
-<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
-<link href="<%=request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
-<script src="<%=request.getContextPath() %>/js/bootstrap.js"></script>
-<link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
-<link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
+<%@include file="/common/common_lib.jsp"%>
+<!-- Custom styles for this template -->
+<link href="<%=request.getContextPath()%>/css/dashboard.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
+<script>
+//문서 로딩이 완료 되었을 때	
+$(function(){
+	$("#modifyBtn").on("click", function(){
+		$("#frm").attr("method", "get");
+		$("#frm").attr("action", "<%=request.getContextPath()%>/userModify");
+		$("#frm").submit();
+	});
+	
+	$("#deleteBtn").on("click", function(){
+		$("#frm").attr("method", "post");
+		$("#frm").attr("action", "<%=request.getContextPath()%>/deleteUser");
+		$("#frm").submit();
+	});
+})
+</script>
 
 </head>
 
@@ -30,9 +45,19 @@
          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
             <% UserVo user = (UserVo)request.getAttribute("user"); %>
-            <form class="form-horizontal" role="form" action="<%=request.getContextPath() %>/userModify" >
-               
+            <form class="form-horizontal" id="frm" role="form">
                <input type="hidden" name="userid" value="<%=user.getUserid() %>"/>
+                
+			<!-- 사용자 프로필 사진 가져오기  -->
+               <div class="form-group">
+                  <label for="profile" class="col-sm-2 control-label">사용자 사진</label>
+                  <div class="col-sm-10">
+                  	<img src="<%=request.getContextPath() %>/profile/<%=user.getUserid() %>.png"/>
+                  	<br>
+<%--                      <label class="control-label"><%=user.getUserid() %>의 profile</label> --%>
+                  </div>
+               </div>
+               
                
                <div class="form-group">
                   <label for="userNm" class="col-sm-2 control-label">사용자 아이디</label>
@@ -91,7 +116,8 @@
 
                <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                     <button type="submit" class="btn btn-default">정보 수정</button>
+                    <button type="button" id="modifyBtn" class="btn btn-default">사용자 수정</button>
+							<button type="button" id="deleteBtn"  class="btn btn-default">사용자 삭제</button>
                   </div>
                </div>
             </form>

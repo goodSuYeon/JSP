@@ -45,5 +45,10 @@
      INSERT INTO users (userid, usernm, pass, reg_dt, alias, addr1, addr2, zipcode)
         VALUES (#{userid}, #{usernm}, #{pass}, sysdate, #{alias}, #{addr1}, #{addr2}, #{zipcode})
    </insert>
+   
+   	<delete id="deleteUser" parameterType="string">
+		DELETE users
+		WHERE userid = #{value}
+	</delete>
 </mapper>
 

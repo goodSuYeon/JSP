@@ -13,11 +13,10 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Jsp</title>
-<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
-<link href="<%=request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
-<script src="<%=request.getContextPath() %>/js/bootstrap.js"></script>
-<link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
-<link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
+
+<%@include file="/common/common_lib.jsp"%>
+<link href="<%=request.getContextPath()%>/css/dashboard.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
 <script>
 // 문서 로딩이 완료되고 나서 실행되는 영역
 $(function(){

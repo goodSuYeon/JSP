@@ -1,8 +1,6 @@
 package kr.or.ddit.user.repository;
 
 import java.util.List;
-import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
 
 import kr.or.ddit.common.model.PageVo;
@@ -88,6 +86,21 @@ public class UserDao implements UserDaoI{
 		
 		sqlSession.close();
 		return updateCnt;
+	}
+	
+	@Override
+	public int deleteUser(String userid) {
+		SqlSession sqlSession = MybatisUtil.getSqlSession();
+		int deleteCnt = sqlSession.update("users.deleteUser", userid);
+		
+		if(deleteCnt == 1) {
+			sqlSession.commit();			
+		}else{
+			sqlSession.rollback();
+		}
+		
+		sqlSession.close();
+		return deleteCnt;
 	}
 	
 }

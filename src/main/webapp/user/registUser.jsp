@@ -6,12 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>사용자 신규등록</title>
-<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
-<link href="<%=request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
-<script src="<%=request.getContextPath() %>/js/bootstrap.js"></script>
-<link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
-<link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
+<%@include file="/common/common_lib.jsp"%>
+<link href="<%=request.getContextPath()%>/css/dashboard.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
 <script>
 $(function(){
 	$('#addrBtn').on('click', function(){

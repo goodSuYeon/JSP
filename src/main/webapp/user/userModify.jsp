@@ -11,11 +11,11 @@
 <meta name="author" content="">
 <title>userModify.Jsp</title>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<script src="<%=request.getContextPath() %>/js/jquery-3.5.1.min.js"></script>
-<link href="<%=request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
-<script src="<%=request.getContextPath() %>/js/bootstrap.js"></script>
-<link href="<%=request.getContextPath() %>/css/dashboard.css" rel="stylesheet">
-<link href="<%=request.getContextPath() %>/css/blog.css" rel="stylesheet">
+<%@include file="/common/common_lib.jsp"%>
+<!-- Custom styles for this template -->
+<link href="<%=request.getContextPath()%>/css/dashboard.css"
+	rel="stylesheet">
+<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
 
 <script>
 $(function(){
