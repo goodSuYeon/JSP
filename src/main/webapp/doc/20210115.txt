@@ -1,0 +1,28 @@
+Model1 : 요청을 jsp가 함수, 응답도 jsp에서 생성
+	     비지니스 로직이 jsp(view)안에서 호출함
+	     만약, 
+	     <다른 jsp(view)에서도 동일한 비지니스 로직(model)을 사용 할 경우>
+	     비지니스 로직의 변경 시 많은 코드 수정이 동반된다.
+	 	 -> 유지보수의 어려움
+	     
+Model2 : 
+
+<MVC패턴>
+ : Model - View - Controller
+ - Controller : 요청을 접수, 비지니스 로직을 호출 및 저장(scope)
+ - Model : 비지니스  로직 처리
+ - View  : 화면 출력을 담당
+ 
+ - 각 역할을 담당하는 객체를 분리
+ - model1과 다르게 View의 model1을 분리
+ - View에서 필요한 데이터는 scope객체를 통해서 받는다.
+ 
+<Front Controller>
+ : 모든 요청을 하나의 객체가 접수 받는 형태
+ 장점 - ???
+ 
+<EL (Expression Language)> 
+: JSP의 기본 문법을 보완하는 기능의 스크립트언어로, 데이터를 표현하기 위한 언어이다
+
+ 
+  	    
