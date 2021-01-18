@@ -13,6 +13,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,11 @@ public class LoginController extends HttpServlet {
 		// session에 데이터베이스 조회한 사용자 정보(userVo)를 지정
 		//2번
 		if(user != null && pass.equals(user.getPass())) {    //사용자가 로그인한 비밀번호와 DB에 저장된 비밀번호 비교
- 			  // 3. 2번 비교 사항이 true일 때 webapp/main.jsp로 forward ( main.jsp는 생성 )
+ 			 
+			 HttpSession session = req.getSession();
+ 			 session.setAttribute("S_USER", user); 
+ 			 
+			 // 3. 2번 비교 사항이 true일 때 webapp/main.jsp로 forward ( main.jsp는 생성 )
 	         req.getRequestDispatcher("/main.jsp").forward(req, resp);
 		}
 		else {
