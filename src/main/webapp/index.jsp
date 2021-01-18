@@ -14,7 +14,7 @@
 	
 	webapp/image/brown.png
 	
-	<img src="<%=request.getContextPath() %>/image/brown.png" />
+	<img src="${pageContext.request.contextPath }/image/brown.png" />
 	
 </body>
 </html>

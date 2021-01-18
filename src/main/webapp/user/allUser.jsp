@@ -1,8 +1,7 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +13,16 @@
 <title>Jsp</title>
 
 <%@include file="/common/common_lib.jsp"%>
-<link href="<%=request.getContextPath()%>/css/dashboard.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/blog.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/dashboard.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
 </head>
 
 <body>
-<% 	// 서블릿에서 만들어서 보낸 데이터를 보여준다.
+<%-- <% 	// 서블릿에서 만들어서 보낸 데이터를 보여준다.
 	List<UserVo> userList = (List<UserVo>)request.getAttribute("userList");
-%>
+%> --%>
 
-	<form id="frm" action="<%= request.getContextPath() %>/user" >
+	<form id="frm" action="${pageContext.request.contextPath }/user" >
 		<input type="hidden" id="userid" name="userid" value="" />
 	</form>
 	
@@ -51,17 +50,20 @@
 									<th>등록일시</th>
 								</tr>
 
-								<%
-									
-									for(UserVo user : userList){
-								%>
+<%-- 								
+								<%	
+									for(UserVo user : (List<UserVo>)request.getAttribute("userList")){
+								%> 
+--%>
+								<c:forEach items="${userList }" var="user">
 								<tr>
-									<td><%= user.getUserid() %></td>
-									<td><%= user.getUsernm() %></td>
-									<td><%= user.getPass() %></td>
-									<td>fmt : <%= user.getReg_dt_fmt()%></td>
+									<td>${user.userid }</td>
+									<td>${user.usernm }</td>
+									<td>${user.alias }</td>
+									<td>fmt : ${user.getReg_dt_fmt() }</td>
 								</tr>
-	  						<% } %>
+								</c:forEach>
+<%-- 	  						<% } %> 	--%>
 							</table>
 						</div>
 						

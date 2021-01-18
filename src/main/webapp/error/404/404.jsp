@@ -17,8 +17,8 @@
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/error/404/js/impromptu/jquery-impromptu.js"></script>
-<script type="text/javascript" src="<%= request.getContextPath() %>/error/404/js/jquery-global.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/error/404/js/impromptu/jquery-impromptu.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/error/404/js/jquery-global.js"></script>
 
 <!--[if IE]>
 <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
