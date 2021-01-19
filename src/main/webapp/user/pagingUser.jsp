@@ -72,7 +72,6 @@ $(function(){
 									<th>등록일시</th>
 								</tr>
 								
-								<c:set var="date" value="<%=new Date() %>" />
 								<c:forEach items="${userList }" var="user">
 								<tr class="user" data-userid="${user.userid}">
 									<td>${user.userid }</td>
