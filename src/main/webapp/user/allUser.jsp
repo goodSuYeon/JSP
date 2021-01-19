@@ -1,6 +1,8 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="kr.or.ddit.user.model.UserVo"%>
 <%@page import="java.util.List"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,12 +57,13 @@
 									for(UserVo user : (List<UserVo>)request.getAttribute("userList")){
 								%> 
 --%>
+
 								<c:forEach items="${userList }" var="user">
 								<tr>
 									<td>${user.userid }</td>
 									<td>${user.usernm }</td>
 									<td>${user.alias }</td>
-									<td>fmt : ${user.getReg_dt_fmt() }</td>
+									<td>fmt : <fmt:formatDate value="${user.reg_dt}" pattern="yyyy.MM.dd" /></td>
 								</tr>
 								</c:forEach>
 <%-- 	  						<% } %> 	--%>
