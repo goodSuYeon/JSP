@@ -13,11 +13,11 @@
 
 <%@ include file="/common/common_lib.jsp" %>  <!-- include에 있는 jsp파일이 복사가 된다-->
 
-<script src="${pageContext.request.contextPath }/js/jquery-3.5.1.min.js"></script>
-<link href="${pageContext.request.contextPath }/css/bootstrap.css" rel="stylesheet"><!-- Bootstrap core CSS -->
-<script src="${pageContext.request.contextPath }/js/bootstrap.js"></script><!-- Custom styles for this template -->
-<link href="${pageContext.request.contextPath }/css/dashboard.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<script src="${cp }/js/jquery-3.5.1.min.js"></script>
+<link href="${cp }/css/bootstrap.css" rel="stylesheet"><!-- Bootstrap core CSS -->
+<script src="${cp }/js/bootstrap.js"></script><!-- Custom styles for this template -->
+<link href="${cp }/css/dashboard.css" rel="stylesheet">
+<link href="${cp }/css/blog.css" rel="stylesheet">
 </head>
 
 <body>

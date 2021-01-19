@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${cp }/sumCalculation" method ="post">
-		start: <input type="text" name="start"> <br>
-		end: <input type="text" name="end"> <br>
-		확인<input type="submit" value="전송">
-	</form>
+	user set : ${USER_SET}
 </body>
 </html>

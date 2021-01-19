@@ -16,9 +16,9 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
 <!-- Bootstrap core CSS -->
-<link href="${pageContext.request.contextPath }/css/bootstrap.min.css" rel="stylesheet">
+<link href="${cp }/css/bootstrap.min.css" rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="${pageContext.request.contextPath }/css/signin.css" rel="stylesheet">
+<link href="${cp }/css/signin.css" rel="stylesheet">
 
 <script>
 	//html문서 로딩이 완료되고나서, 실행되는 코드
@@ -59,8 +59,10 @@
 <body>
 
     <div class="container">
-		UNT_CD : ${param.UNT_CD} / <%=request.getParameter("UNT_CD") %>
-      <form id="frm" class="form-signin" action="${pageContext.request.contextPath }/LoginController" method="post">
+<%-- 		UNT_CD : ${param.UNT_CD} / <%=request.getParameter("UNT_CD") %> --%>
+		cp : ${cp } / <%=application.getAttribute("cp") %>
+		
+      <form id="frm" class="form-signin" action="${cp }/LoginController" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="userid" class="sr-only">userId</label>
         <input type="text" value="userId" id="userid" name="userid" class="form-control" placeholder="Id" required autofocus>

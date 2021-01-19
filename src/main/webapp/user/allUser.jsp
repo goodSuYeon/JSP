@@ -15,8 +15,8 @@
 <title>Jsp</title>
 
 <%@include file="/common/common_lib.jsp"%>
-<link href="${pageContext.request.contextPath }/css/dashboard.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp }/css/dashboard.css" rel="stylesheet">
+<link href="${cp }/css/blog.css" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 	List<UserVo> userList = (List<UserVo>)request.getAttribute("userList");
 %> --%>
 
-	<form id="frm" action="${pageContext.request.contextPath }/user" >
+	<form id="frm" action="${cp }/user" >
 		<input type="hidden" id="userid" name="userid" value="" />
 	</form>
 	

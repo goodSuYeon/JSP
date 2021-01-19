@@ -16,8 +16,8 @@
 <title>Jsp</title>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <%@include file="/common/common_lib.jsp"%>
-<link href="${pageContext.request.contextPath }/css/dashboard.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath }/css/blog.css" rel="stylesheet">
+<link href="${cp }/css/dashboard.css" rel="stylesheet">
+<link href="${cp }/css/blog.css" rel="stylesheet">
 <script>
 // 문서 로딩이 완료되고 나서 실행되는 영역
 $(function(){
@@ -29,7 +29,7 @@ $(function(){
 	})
 	
 	$('#insertBtn').on('click', function(){
-		 location.href="${pageContext.request.contextPath }/user/registUser.jsp"
+		 location.href="${cp }/user/registUser.jsp"
 	})
 })
 </script>
@@ -42,7 +42,7 @@ $(function(){
 
 %> --%>
 
-	<form id="frm" action="${pageContext.request.contextPath }/user" >
+	<form id="frm" action="${cp }/user" >
 		<input type="hidden" id="userid" name="userid" value="" />
 	</form>
 	
@@ -94,7 +94,7 @@ $(function(){
 							
 							<ul class="pagination">
 								<li class="prev">
-									<a href="${pageContext.request.contextPath }/pagingUser?page=1&pageSize=${pageVo.getPageSize() }">«</a>
+									<a href="${cp }/pagingUser?page=1&pageSize=${pageVo.getPageSize() }">«</a>
 								</li>
 								
 <%-- 								<%
@@ -110,7 +110,7 @@ $(function(){
 										 <li class="active"><span>${i }</span></li>
 									</c:when>
 									<c:otherwise>
-										<li><a href="${pageContext.request.contextPath }/pagingUser?page=${i }&pageSize=${pageVo.getPageSize() }">${i }</a></li>
+										<li><a href="${cp }/pagingUser?page=${i }&pageSize=${pageVo.getPageSize() }">${i }</a></li>
 									</c:otherwise>
 								</c:choose>	
 								</c:forEach>
@@ -118,13 +118,13 @@ $(function(){
 <%-- 								 <li class="active"><span><%=i %></span></li>
 								<% } 
 									 else{ %>
-									<li><a href="${pageContext.request.contextPath }/pagingUser?page=<%=i %>&pageSize=<%=pageVo.getPageSize()%>"><%=i %></a></li>
+									<li><a href="${cp }/pagingUser?page=<%=i %>&pageSize=<%=pageVo.getPageSize()%>"><%=i %></a></li>
 								<% } %>
 								<% } %>
  --%>										 
 								
 								<li class="next">
-									<a href="${pageContext.request.contextPath }/pagingUser?page=4&pageSize=${pageVo.getPageSize() }">»</a>
+									<a href="${cp }/pagingUser?page=4&pageSize=${pageVo.getPageSize() }">»</a>
 								</li>
 							</ul>
 						</div>

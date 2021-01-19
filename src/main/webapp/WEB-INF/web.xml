@@ -89,4 +89,11 @@
 	<location>/error/type/runError.jsp</location>
 </error-page>
 
+<listener>
+	<listener-class>kr.or.ddit.listener.ApplicationListener</listener-class>
+</listener>
+
+<listener>
+	<listener-class>kr.or.ddit.listener.LoginUserListener</listener-class>
+</listener>
 </web-app>

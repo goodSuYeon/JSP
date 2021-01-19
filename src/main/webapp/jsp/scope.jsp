@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/scope" method="post">
+	<form action="${cp }/scope" method="post">
 	    <input type="text" name="scope" value="김수연"> 
 		<input type="submit" value="전송">
 	</form>
